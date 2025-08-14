@@ -189,27 +189,7 @@
             text-decoration: none;
         }
 
-        .email-reveal-btn {
-            background-color: var(--secondary-color);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 0.9em;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .email-reveal-btn:hover {
-            background-color: var(--link-hover);
-        }
-
-        .email-revealed {
-            color: var(--primary-color);
-            font-weight: bold;
-            user-select: all;
-        }
+        @media (max-width: 768px) {
             .header {
                 grid-template-columns: 1fr;
                 text-align: center;
@@ -279,8 +259,7 @@
 
                 <div class="contact-info">
                     <h3><i class="fas fa-envelope"></i> Contact</h3>
-                    <p id="email-display">Click to reveal email</p>
-                    <button id="email-btn" class="email-reveal-btn">Show Email</button>
+                    <p>marco [dot] letizia [at] edu [dot] unige [dot] it</p>
                 </div>
 
                 <p>
@@ -327,21 +306,5 @@
             <p>Hosted on GitHub Pages — Theme inspired by orderedlist</p>
         </footer>
     </div>
-
-    <script>
-        // Email reveal functionality to prevent spam harvesting
-        document.getElementById('email-btn').addEventListener('click', function() {
-            const emailDisplay = document.getElementById('email-display');
-            const emailBtn = document.getElementById('email-btn');
-            
-            // Construct email to avoid it being in plain text in the source
-            const user = 'marco.letizia';
-            const domain = 'edu.unige.it';
-            const email = user + '@' + domain;
-            
-            emailDisplay.innerHTML = '<a href="mailto:' + email + '" class="email-revealed">' + email + '</a>';
-            emailBtn.style.display = 'none';
-        });
-    </script>
 </body>
 </html>
